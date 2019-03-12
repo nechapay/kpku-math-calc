@@ -1,0 +1,136 @@
+<!doctype html>
+
+<html>
+<head lang="ru-RU">
+    <meta charset="utf-8">
+
+    <title>Математика</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.12.1.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.browser.js"></script>
+	<script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style-local.css">
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/main-local.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="debug" style="position: absolute; left: 5px; top: 5px; z-index: 50; height: 1em;"></div>
+
+<audio id="audioSuccess" preload="auto">
+    
+    <!--<source src="audio/success.ogg" type="audio/ogg; codecs=vorbis">-->
+    <!--<source src="audio/success.wav" type="audio/wav">-->
+</audio>
+
+<audio id="audioFail" preload="auto">
+    <!--<source src="audio/fail.mp3" type="audio/mpeg">-->
+    <!--<source src="audio/fail.ogg" type="audio/ogg; codecs=vorbis">-->
+    <!--<source src="audio/fail.wav" type="audio/wav">-->
+</audio>
+
+<div id="contentContainer" class="content-container fill">
+    <div class="content fill">
+        <div id="page_1" class="page active" style="position: relative">
+            <div class="success">РЕШЕНО ВЕРНО!</div>
+            <div class="expr-container"></div>
+            <div class="answers-container"></div>
+            <div class="calculator">
+                <div class="calc-main">
+                    <div class="calc-left-right">
+                        <div class="calc-left">
+                             <div class="digit-group">
+                                <button id="btn7" class="calc-button digit">7</button>
+                                <button id="btn8" class="calc-button digit">8</button>
+                                <button id="btn9" class="calc-button digit">9</button>
+                            </div>
+                             <div class="digit-group">
+                                <button id="btn4" class="calc-button digit">4</button>
+                                <button id="btn5" class="calc-button digit">5</button>
+                                <button id="btn6" class="calc-button digit">6</button>
+                            </div>
+
+                            <div class="digit-group">
+                                <button id="btn1" class="calc-button digit">1</button>
+                                <button id="btn2" class="calc-button digit">2</button>
+                                <button id="btn3" class="calc-button digit">3</button>
+                            </div>
+                           <div class="digit-group">
+                               <button id="btn0" class="calc-button digit zero">0</button>                               
+                               <button id="btnDot" class="calc-button operand zero">.</button>
+                           </div>
+                            <div class="digit-group">
+                               <button id="btnPlus" class="calc-button operand plus">+</button>
+                               <button id="btnMinus" class="calc-button operand plus">−</button>                               
+                           </div>
+                        </div>
+                        <div class="calc-right">                        
+                            <button  id="btnSign" class="calc-button operand">-</button>
+                            <button  id="btnSqrt" class="calc-button operand">√</button>
+                            <button  id="btnDivide" class="calc-button operand divide"><div class="divide"><p class="upper-half">x</p><p class="sub" style="border-color: #FFF;">y</p></div></button>                    
+                        </div>
+                    </div>    
+                   
+                </div>
+                <div class="control-group">
+                        <button id="addBtn" class="ctrl-button">Добавить корень</button>
+                        <button id="btnClear" class="ctrl-button">Очистить</button>                       
+                        <button id="repBtn" class="ctrl-button">Повторить</button>
+                        <button id="checkBtn" class="ctrl-button">Проверить</button>
+                        <button id="nextBtn" class="ctrl-button">Далее</button>
+               </div>
+            </div>
+            <div class="result-btn"><button id="resultBtn" class="ctrl-button hide">Результаты</button></div>
+            <div class="dropdown">
+                <button class="dropbtn">Выбор уравнения</button>
+                <div class="dropdown-content"></div>    
+            </div>
+            <button id="ibtn" class="info-btn" title="Показать дополнительную информацию">?</button>
+            <div class="infobtns-container">
+                <button id="fbtn1" class="fact-btn"></button>
+                <button id="fbtn2" class="fact-btn"></button>
+                <button id="fbtn3" class="fact-btn"></button>
+            </div>
+        </div>
+        <div id="page_2" class="page" style="position: relative">
+            <div class="title-container"><div class="panel page-title">Результаты решения уравнений.</div></div>            
+            <div class="table-container"></div>
+        </div>
+    </div>
+</div>
+      
+<div id="myModal" class="modal">     
+   <div class="modal-content"> 
+       <div class="modal-header">       
+       <span class="close">&times;</span>
+       <h3 id="err-cap"></h3>
+   </div>
+       <p id="err-msg"></p>
+   </div>
+</div>    
+<div id="myViewer" class="modal viewer">     
+   <div class="modal-content viewer"> 
+       <div class="modal-header viewer">       
+       <span class="close2">&times;</span>
+       <h3 id="text-cap"></h3>
+   </div>
+       <div style="overflow-y: scroll; max-height: 550px;">
+       <p id="text-msg"></p>
+       </div>
+   </div>
+</div>  
+    
+</body>
+</html>
